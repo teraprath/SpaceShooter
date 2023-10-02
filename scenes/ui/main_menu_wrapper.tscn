@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjx6q6obuo4yj"]
+
+[ext_resource type="PackedScene" uid="uid://b28ug3beqy8gf" path="res://scenes/ui/main_menu.tscn" id="1_uj7eb"]
+
+[sub_resource type="Animation" id="Animation_mpv83"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_xeedf"]
+resource_name = "default"
+length = 20.0
+loop_mode = 1
+step = 5.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hfobt"]
+_data = {
+"RESET": SubResource("Animation_mpv83"),
+"default": SubResource("Animation_xeedf")
+}
+
+[node name="MainMenuWrapper" type="Node2D"]
+
+[node name="MainMenu" parent="." instance=ExtResource("1_uj7eb")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+libraries = {
+"": SubResource("AnimationLibrary_hfobt")
+}

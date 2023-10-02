@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c367jst1d670a"]
+
+[ext_resource type="Script" path="res://scenes/objects/world_environment.gd" id="1_bp5rr"]
+
+[sub_resource type="Environment" id="Environment_quwva"]
+glow_enabled = true
+glow_intensity = 0.4
+glow_strength = 1.2
+glow_hdr_threshold = 0.8
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_quwva")
+script = ExtResource("1_bp5rr")

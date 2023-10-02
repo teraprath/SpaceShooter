@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://ksysrejyns84"]
+
+[ext_resource type="PackedScene" uid="uid://du17c4f4nkv8k" path="res://scenes/items/item.tscn" id="1_f6um5"]
+[ext_resource type="Script" path="res://scenes/items/shield_item.gd" id="2_nidpo"]
+[ext_resource type="Texture2D" uid="uid://bkshuq4nag2a4" path="res://assets/textures/temporary-shield.svg" id="3_nwxyo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_msihu"]
+radius = 260.0
+
+[node name="ShieldItem" instance=ExtResource("1_f6um5")]
+modulate = Color(2, 0.26, 0.93, 1)
+script = ExtResource("2_nidpo")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_nwxyo")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_msihu")

@@ -1,0 +1,41 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bnhue6sj65ig5"]
+
+[ext_resource type="FontFile" uid="uid://dcmwsl730ggw4" path="res://assets/fonts/Lexend-Medium.ttf" id="1_0ndg3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rllnd"]
+content_margin_top = 50.0
+content_margin_bottom = 50.0
+bg_color = Color(0, 0, 0, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sj658"]
+content_margin_top = 50.0
+content_margin_bottom = 50.0
+bg_color = Color(0, 0, 0, 0.784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07dqf"]
+content_margin_top = 50.0
+content_margin_bottom = 50.0
+bg_color = Color(0, 0, 0, 0.784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jfj4k"]
+content_margin_left = 50.0
+content_margin_top = 50.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
+bg_color = Color(0, 0, 0, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kqmp"]
+bg_color = Color(0, 0, 0, 0.317647)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfpax"]
+bg_color = Color(1, 0.392157, 0.32549, 1)
+
+[resource]
+default_font = ExtResource("1_0ndg3")
+default_font_size = 36
+Button/styles/disabled = SubResource("StyleBoxFlat_rllnd")
+Button/styles/focus = SubResource("StyleBoxFlat_sj658")
+Button/styles/hover = SubResource("StyleBoxFlat_07dqf")
+Button/styles/normal = SubResource("StyleBoxFlat_jfj4k")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_0kqmp")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_yfpax")

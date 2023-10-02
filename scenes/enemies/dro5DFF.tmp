@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxv0s136j78wr"]
+
+[ext_resource type="PackedScene" uid="uid://byqd6hixcjg88" path="res://scenes/enemies/enemy.tscn" id="1_omxrn"]
+[ext_resource type="Texture2D" uid="uid://cywteamjf7qyx" path="res://assets/textures/enemy_A.png" id="2_eoott"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_78kb2"]
+radius = 90.3549
+
+[node name="Drone01" instance=ExtResource("1_omxrn")]
+script = null
+
+[node name="Sprite2D" parent="." index="0"]
+rotation = 1.5708
+texture = ExtResource("2_eoott")
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+rotation = 1.5708
+polygon = PackedVector2Array(0, -47, 14, 8, 23, 17, 30, 15, 40, 18, 46, 22, 48, 33, 46, 40, 41, 46, 33, 48, 26, 49, 18, 40, 14, 29, 17, 24, 12, 19, 1, 33, -13, 19, -17, 24, -16, 29, -16, 38, -23, 46, -36, 49, -47, 41, -48, 24, -39, 15, -28, 15, -24, 17, -14, 9)
+
+[node name="ShootDelayTimer" parent="Timer" index="0"]
+wait_time = 2.0
+one_shot = true
+
+[node name="CollisionShape2D" parent="SpaceArea" index="0"]
+shape = SubResource("CircleShape2D_78kb2")

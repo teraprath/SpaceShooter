@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnnh2wadaa4d2"]
+
+[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_3o0yl"]
+[ext_resource type="PackedScene" uid="uid://dpnni1weiu4pa" path="res://scenes/player/player.tscn" id="1_e7crw"]
+[ext_resource type="PackedScene" uid="uid://dl54i8yqr7lvs" path="res://scenes/ui/player_ui.tscn" id="4_qj0fv"]
+[ext_resource type="PackedScene" uid="uid://comolhkhofw4s" path="res://scenes/objects/spawner.tscn" id="7_s2ilt"]
+[ext_resource type="PackedScene" uid="uid://wqfyt23phuty" path="res://scenes/ui/death_menu.tscn" id="9_0wedi"]
+[ext_resource type="PackedScene" uid="uid://u75tgwn7ly60" path="res://scenes/ui/pause_menu.tscn" id="9_bbpk8"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_3o0yl")
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Bullets" type="Node2D" parent="."]
+
+[node name="Entities" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_e7crw")]
+position = Vector2(960, 540)
+
+[node name="Spawner" parent="Player" instance=ExtResource("7_s2ilt")]
+
+[node name="PlayerUI" parent="." instance=ExtResource("4_qj0fv")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("9_bbpk8")]
+visible = false
+
+[node name="DeathMenu" parent="." instance=ExtResource("9_0wedi")]
+visible = false
+
+[connection signal="shoot" from="Player" to="." method="_on_player_shoot"]

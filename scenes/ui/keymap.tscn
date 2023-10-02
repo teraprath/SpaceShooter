@@ -1,0 +1,191 @@
+[gd_scene load_steps=20 format=3 uid="uid://dgquufhcai5rb"]
+
+[ext_resource type="Script" path="res://scenes/ui/keymap.gd" id="1_vw835"]
+[ext_resource type="Texture2D" uid="uid://d1yxyq3abiqeg" path="res://assets/ui/controls/playstation/Button - PS L1 Blank.svg" id="2_8c1yu"]
+[ext_resource type="Texture2D" uid="uid://dsgd0lbabjb7h" path="res://assets/ui/controls/playstation/Button - PS L2.svg" id="2_tslf4"]
+[ext_resource type="Texture2D" uid="uid://bcyomhw2cshej" path="res://assets/ui/controls/playstation/Button - PS L1 Blank – 2.svg" id="3_452cl"]
+[ext_resource type="Texture2D" uid="uid://d28a1htq3fpl8" path="res://assets/ui/controls/playstation/Button - PS L2 – 2.svg" id="3_v3bbl"]
+[ext_resource type="FontFile" uid="uid://cqj6johbryp1b" path="res://assets/fonts/Lexend-SemiBold.ttf" id="4_6fx23"]
+[ext_resource type="Texture2D" uid="uid://dh2q4belufxbg" path="res://assets/ui/controls/playstation/Button - PS R2.svg" id="4_lnidu"]
+[ext_resource type="Texture2D" uid="uid://nledd23vj80b" path="res://assets/ui/controls/playstation/Button - PS R2 – 2.svg" id="5_w55bu"]
+[ext_resource type="Texture2D" uid="uid://yacm0olsnjsj" path="res://assets/ui/controls/playstation/Button - PS R1 – 2.svg" id="6_ykesq"]
+[ext_resource type="Texture2D" uid="uid://cjou1pkulg46j" path="res://assets/ui/controls/playstation/Button - PS R1.svg" id="7_02ufl"]
+[ext_resource type="Texture2D" uid="uid://de674kxu53r17" path="res://assets/ui/controls/playstation/Button - PS L1.svg" id="8_6g7w2"]
+[ext_resource type="Texture2D" uid="uid://vcd18os4kccl" path="res://assets/ui/controls/xbox/button_xbox_analog_trigger_light_1.svg" id="8_610w8"]
+[ext_resource type="Texture2D" uid="uid://do1majbq724d3" path="res://assets/ui/controls/xbox/button_xbox_analog_trigger_dark_1.svg" id="9_kx0x0"]
+[ext_resource type="Texture2D" uid="uid://cpyu0kpxdf5r1" path="res://assets/ui/controls/playstation/Button - PS L1 – 2.svg" id="9_ul8ur"]
+[ext_resource type="Texture2D" uid="uid://c347fblrftsck" path="res://assets/ui/controls/xbox/button_xbox_digital_bumper_light_1.svg" id="10_7r1fv"]
+[ext_resource type="Texture2D" uid="uid://11skxntr063f" path="res://assets/ui/controls/playstation/Button - PS Triangle 1.svg" id="10_ignml"]
+[ext_resource type="Texture2D" uid="uid://dxdk4e68jvwis" path="res://assets/ui/controls/xbox/button_xbox_digital_bumper_dark_1.svg" id="11_ldbpp"]
+[ext_resource type="Texture2D" uid="uid://bfqsuwuwr08tl" path="res://assets/ui/controls/xbox/button_xbox_digital_bumper_light_2.svg" id="12_kqg66"]
+[ext_resource type="Texture2D" uid="uid://x00h8gthb7b" path="res://assets/ui/controls/xbox/button_xbox_digital_bumper_dark_2.svg" id="13_0tv7s"]
+
+[node name="Keymap" type="HBoxContainer"]
+offset_right = 368.0
+offset_bottom = 120.0
+script = ExtResource("1_vw835")
+
+[node name="KeyboardDash" type="TextureButton" parent="."]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_8c1yu")
+texture_pressed = ExtResource("2_8c1yu")
+texture_hover = ExtResource("2_8c1yu")
+texture_disabled = ExtResource("3_452cl")
+texture_focused = ExtResource("2_8c1yu")
+
+[node name="Label" type="Label" parent="KeyboardDash"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_6fx23")
+theme_override_font_sizes/font_size = 24
+text = "shift"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyboardAbility" type="TextureButton" parent="."]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_8c1yu")
+texture_pressed = ExtResource("2_8c1yu")
+texture_hover = ExtResource("2_8c1yu")
+texture_disabled = ExtResource("3_452cl")
+texture_focused = ExtResource("2_8c1yu")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="KeyboardAbility"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_6fx23")
+theme_override_font_sizes/font_size = 24
+text = "F"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyboardUltimate" type="TextureButton" parent="."]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_8c1yu")
+texture_pressed = ExtResource("2_8c1yu")
+texture_hover = ExtResource("2_8c1yu")
+texture_disabled = ExtResource("3_452cl")
+texture_focused = ExtResource("2_8c1yu")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="KeyboardUltimate"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_6fx23")
+theme_override_font_sizes/font_size = 24
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayStationDash" type="TextureButton" parent="."]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_tslf4")
+texture_pressed = ExtResource("2_tslf4")
+texture_hover = ExtResource("2_tslf4")
+texture_disabled = ExtResource("3_v3bbl")
+texture_focused = ExtResource("2_tslf4")
+
+[node name="PlayStationAbility" type="TextureButton" parent="."]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("8_6g7w2")
+texture_pressed = ExtResource("8_6g7w2")
+texture_hover = ExtResource("8_6g7w2")
+texture_disabled = ExtResource("9_ul8ur")
+texture_focused = ExtResource("8_6g7w2")
+stretch_mode = 3
+
+[node name="PlayStationUltimate" type="TextureButton" parent="."]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("7_02ufl")
+texture_pressed = ExtResource("7_02ufl")
+texture_hover = ExtResource("7_02ufl")
+texture_disabled = ExtResource("6_ykesq")
+texture_focused = ExtResource("7_02ufl")
+stretch_mode = 3
+
+[node name="XboxDash" type="TextureButton" parent="."]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("8_610w8")
+texture_pressed = ExtResource("2_tslf4")
+texture_hover = ExtResource("2_tslf4")
+texture_disabled = ExtResource("9_kx0x0")
+texture_focused = ExtResource("2_tslf4")
+
+[node name="XboxAbility" type="TextureButton" parent="."]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("10_7r1fv")
+texture_pressed = ExtResource("10_7r1fv")
+texture_hover = ExtResource("10_7r1fv")
+texture_disabled = ExtResource("11_ldbpp")
+texture_focused = ExtResource("10_7r1fv")
+stretch_mode = 3
+
+[node name="XboxUltimate" type="TextureButton" parent="."]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("12_kqg66")
+texture_pressed = ExtResource("12_kqg66")
+texture_hover = ExtResource("12_kqg66")
+texture_disabled = ExtResource("13_0tv7s")
+texture_focused = ExtResource("12_kqg66")
+stretch_mode = 3
+
+[node name="Temp" type="Node2D" parent="."]
+visible = false
+
+[node name="Button-PsR2" type="Sprite2D" parent="Temp"]
+position = Vector2(-122, 47)
+texture = ExtResource("4_lnidu")
+
+[node name="Button-PsR2–2" type="Sprite2D" parent="Temp"]
+position = Vector2(-120, -33)
+texture = ExtResource("5_w55bu")
+
+[node name="Button-PsR1–2" type="Sprite2D" parent="Temp"]
+position = Vector2(8, -28)
+texture = ExtResource("6_ykesq")
+
+[node name="Button-PsR1" type="Sprite2D" parent="Temp"]
+position = Vector2(3, 46)
+texture = ExtResource("7_02ufl")
+
+[node name="Button-PsL2" type="Sprite2D" parent="Temp"]
+position = Vector2(148, 54)
+texture = ExtResource("2_tslf4")
+
+[node name="Button-PsL2–2" type="Sprite2D" parent="Temp"]
+position = Vector2(151, -34)
+texture = ExtResource("3_v3bbl")
+
+[node name="Button-PsL1" type="Sprite2D" parent="Temp"]
+position = Vector2(280, 55)
+texture = ExtResource("8_6g7w2")
+
+[node name="Button-PsL1–2" type="Sprite2D" parent="Temp"]
+position = Vector2(280, -31)
+texture = ExtResource("9_ul8ur")
+
+[node name="Button-PsTriangle1" type="Sprite2D" parent="Temp"]
+position = Vector2(-141, 231)
+texture = ExtResource("10_ignml")

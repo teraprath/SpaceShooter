@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn2182j8n6vn5"]
+
+[ext_resource type="PackedScene" uid="uid://du17c4f4nkv8k" path="res://scenes/items/item.tscn" id="1_uduh3"]
+[ext_resource type="Texture2D" uid="uid://cfbx3p866cjy4" path="res://assets/textures/remedy.svg" id="2_mvffb"]
+[ext_resource type="Script" path="res://scenes/items/heal_potion.gd" id="2_phuao"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gtfmn"]
+radius = 311.97
+
+[node name="HealPotion" instance=ExtResource("1_uduh3")]
+modulate = Color(25, 0.48, 0.42, 1)
+script = ExtResource("2_phuao")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_mvffb")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_gtfmn")

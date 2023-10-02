@@ -1,0 +1,112 @@
+[gd_scene load_steps=3 format=3 uid="uid://wqfyt23phuty"]
+
+[ext_resource type="Script" path="res://scenes/ui/death_menu.gd" id="1_bif1g"]
+[ext_resource type="Theme" uid="uid://bnhue6sj65ig5" path="res://tres/main_theme.tres" id="1_s5m38"]
+
+[node name="DeathMenu" type="CanvasLayer"]
+script = ExtResource("1_bif1g")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.196078)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_s5m38")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -298.0
+offset_top = -145.0
+offset_right = 298.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 25
+
+[node name="MenuButton" type="Button" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back to Menu"
+
+[node name="NewGame" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "New Game"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -24.0
+offset_right = 109.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.392157, 0.32549, 1)
+theme_override_font_sizes/font_size = 96
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Record" type="Label" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.894118, 0.564706, 1)
+theme_override_font_sizes/font_size = 96
+text = "NEW RECORD!"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Spacer" type="Panel" parent="Control/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="Highscore" type="Label" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Highscore: {}"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.427451, 0.427451, 0.427451, 1)
+theme_override_font_sizes/font_size = 48
+text = "Score: {}"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Panel" parent="Control/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[connection signal="pressed" from="Control/HBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/NewGame" to="." method="_on_new_game_pressed"]

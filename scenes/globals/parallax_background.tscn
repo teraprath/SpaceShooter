@@ -1,0 +1,258 @@
+[gd_scene load_steps=10 format=3 uid="uid://uoo678s6v5x"]
+
+[ext_resource type="Texture2D" uid="uid://dt4ge5eh02ct6" path="res://assets/textures/meteor_large.png" id="1_2yibr"]
+[ext_resource type="Script" path="res://scenes/globals/parallax_background.gd" id="1_jeaw5"]
+[ext_resource type="Texture2D" uid="uid://bn0m18ubqnxus" path="res://assets/textures/meteor_small.png" id="2_560ro"]
+[ext_resource type="Texture2D" uid="uid://cdnx4tgkbb0cp" path="res://assets/textures/meteor_squareDetailedSmall.png" id="3_c71te"]
+[ext_resource type="Texture2D" uid="uid://dkfbvevq3ia1u" path="res://assets/textures/star_small.png" id="5_uupyb"]
+[ext_resource type="Texture2D" uid="uid://kcr5wugjfotv" path="res://assets/textures/star_tiny.png" id="6_ywt8k"]
+[ext_resource type="Texture2D" uid="uid://df8tq5wl7n6vy" path="res://assets/textures/meteor_squareDetailedLarge.png" id="7_vnups"]
+[ext_resource type="Texture2D" uid="uid://xke6yce5qtjc" path="res://assets/textures/meteor_squareSmall.png" id="8_ruqf4"]
+[ext_resource type="Texture2D" uid="uid://c5o2oslyce8gr" path="res://assets/textures/meteor_squareLarge.png" id="8_sm6dn"]
+
+[node name="GlobalBackground" type="Node2D"]
+script = ExtResource("1_jeaw5")
+metadata/_edit_vertical_guides_ = []
+
+[node name="Parallax1" type="ParallaxBackground" parent="."]
+unique_name_in_owner = true
+scroll_base_offset = Vector2(200, 30)
+
+[node name="Parallax2" type="ParallaxBackground" parent="Parallax1"]
+unique_name_in_owner = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Parallax1/Parallax2"]
+modulate = Color(0.31, 0.31, 0.39, 1)
+rotation = 0.0445303
+motion_scale = Vector2(1.2, 1.2)
+motion_mirroring = Vector2(1920, 1920)
+
+[node name="MeteorSquareSmall" type="Sprite2D" parent="Parallax1/Parallax2/ParallaxLayer2"]
+position = Vector2(168.52, 749.241)
+rotation = -0.0445303
+texture = ExtResource("8_ruqf4")
+
+[node name="MeteorSquareLarge" type="Sprite2D" parent="Parallax1/Parallax2/ParallaxLayer2"]
+position = Vector2(1429.96, 124.468)
+rotation = -0.62671
+texture = ExtResource("8_sm6dn")
+
+[node name="MeteorSmall" type="Sprite2D" parent="Parallax1/Parallax2/ParallaxLayer2"]
+position = Vector2(1813.19, 952.229)
+rotation = -0.478683
+texture = ExtResource("2_560ro")
+
+[node name="StarTiny" type="Sprite2D" parent="Parallax1/Parallax2/ParallaxLayer2"]
+position = Vector2(1534.75, 589.264)
+rotation = -0.0445303
+texture = ExtResource("6_ywt8k")
+
+[node name="StarTiny2" type="Sprite2D" parent="Parallax1/Parallax2/ParallaxLayer2"]
+position = Vector2(781.397, 687.898)
+rotation = -0.0445303
+texture = ExtResource("6_ywt8k")
+
+[node name="StarTiny3" type="Sprite2D" parent="Parallax1/Parallax2/ParallaxLayer2"]
+position = Vector2(548.977, 256.817)
+rotation = -0.0445303
+texture = ExtResource("6_ywt8k")
+
+[node name="StarSmall" type="Sprite2D" parent="Parallax1/Parallax2/ParallaxLayer2"]
+position = Vector2(1121.55, 279.351)
+rotation = -0.0445303
+texture = ExtResource("5_uupyb")
+
+[node name="Parallax3" type="ParallaxBackground" parent="Parallax1/Parallax2"]
+unique_name_in_owner = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Parallax1/Parallax2/Parallax3"]
+modulate = Color(0.34902, 0.34902, 0.45098, 1)
+rotation = 0.0330617
+motion_mirroring = Vector2(1920, 1920)
+
+[node name="StarTiny" type="Sprite2D" parent="Parallax1/Parallax2/Parallax3/ParallaxLayer2"]
+position = Vector2(558.171, 843.01)
+rotation = -0.0330617
+texture = ExtResource("6_ywt8k")
+
+[node name="StarTiny2" type="Sprite2D" parent="Parallax1/Parallax2/Parallax3/ParallaxLayer2"]
+position = Vector2(154.27, 429.135)
+rotation = -0.0330617
+texture = ExtResource("6_ywt8k")
+
+[node name="StarTiny3" type="Sprite2D" parent="Parallax1/Parallax2/Parallax3/ParallaxLayer2"]
+position = Vector2(1098.77, 95.7319)
+rotation = -0.0330617
+texture = ExtResource("6_ywt8k")
+
+[node name="StarTiny4" type="Sprite2D" parent="Parallax1/Parallax2/Parallax3/ParallaxLayer2"]
+position = Vector2(1304.02, 463.148)
+rotation = -0.0330617
+texture = ExtResource("6_ywt8k")
+
+[node name="StarTiny5" type="Sprite2D" parent="Parallax1/Parallax2/Parallax3/ParallaxLayer2"]
+position = Vector2(1327.69, 936.624)
+rotation = -0.0330617
+texture = ExtResource("6_ywt8k")
+
+[node name="StarTiny7" type="Sprite2D" parent="Parallax1/Parallax2/Parallax3/ParallaxLayer2"]
+position = Vector2(1021.23, 1563.1)
+rotation = -0.0330617
+texture = ExtResource("6_ywt8k")
+
+[node name="StarTiny8" type="Sprite2D" parent="Parallax1/Parallax2/Parallax3/ParallaxLayer2"]
+position = Vector2(1526.08, 1217.22)
+rotation = -0.0330617
+texture = ExtResource("6_ywt8k")
+
+[node name="StarTiny9" type="Sprite2D" parent="Parallax1/Parallax2/Parallax3/ParallaxLayer2"]
+position = Vector2(368.042, 1749.79)
+rotation = 2.8704
+texture = ExtResource("6_ywt8k")
+
+[node name="StarTiny6" type="Sprite2D" parent="Parallax1/Parallax2/Parallax3/ParallaxLayer2"]
+position = Vector2(1804.87, 480.601)
+rotation = -0.0330617
+texture = ExtResource("6_ywt8k")
+
+[node name="MeteorSquareDetailedLarge" type="Sprite2D" parent="Parallax1/Parallax2/Parallax3/ParallaxLayer2"]
+position = Vector2(1811.53, 621.458)
+rotation = -0.0330617
+texture = ExtResource("7_vnups")
+
+[node name="MeteorSquareDetailedLarge2" type="Sprite2D" parent="Parallax1/Parallax2/Parallax3/ParallaxLayer2"]
+position = Vector2(1178.82, 1396.8)
+rotation = 0.636587
+texture = ExtResource("7_vnups")
+
+[node name="MeteorSquareSmall" type="Sprite2D" parent="Parallax1/Parallax2/Parallax3/ParallaxLayer2"]
+position = Vector2(776.772, 373.527)
+rotation = -0.0330617
+texture = ExtResource("8_ruqf4")
+
+[node name="MeteorSquareSmall2" type="Sprite2D" parent="Parallax1/Parallax2/Parallax3/ParallaxLayer2"]
+position = Vector2(205.8, 1230.87)
+rotation = -2.78381
+texture = ExtResource("7_vnups")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax1"]
+modulate = Color(0.176471, 0.176471, 0.176471, 1)
+motion_offset = Vector2(300, 20)
+motion_mirroring = Vector2(1920, 1920)
+
+[node name="MeteorLarge" type="Sprite2D" parent="Parallax1/ParallaxLayer"]
+position = Vector2(355, 215)
+texture = ExtResource("1_2yibr")
+
+[node name="MeteorSmall" type="Sprite2D" parent="Parallax1/ParallaxLayer"]
+position = Vector2(1075, 688)
+texture = ExtResource("2_560ro")
+
+[node name="MeteorSquareDetailedSmall" type="Sprite2D" parent="Parallax1/ParallaxLayer"]
+position = Vector2(496, 660)
+rotation = 0.840782
+texture = ExtResource("3_c71te")
+
+[node name="StarSmall" type="Sprite2D" parent="Parallax1/ParallaxLayer"]
+position = Vector2(180, 875)
+texture = ExtResource("5_uupyb")
+
+[node name="StarSmall2" type="Sprite2D" parent="Parallax1/ParallaxLayer"]
+position = Vector2(828, 158)
+texture = ExtResource("5_uupyb")
+
+[node name="StarSmall3" type="Sprite2D" parent="Parallax1/ParallaxLayer"]
+position = Vector2(1720, 348)
+texture = ExtResource("5_uupyb")
+
+[node name="StarSmall4" type="Sprite2D" parent="Parallax1/ParallaxLayer"]
+position = Vector2(1493, 829)
+texture = ExtResource("5_uupyb")
+
+[node name="StarSmall6" type="Sprite2D" parent="Parallax1/ParallaxLayer"]
+position = Vector2(860, 944)
+texture = ExtResource("5_uupyb")
+
+[node name="MeteorSquareLarge" type="Sprite2D" parent="Parallax1/ParallaxLayer"]
+position = Vector2(509.226, 1167.37)
+rotation = -0.62671
+texture = ExtResource("8_sm6dn")
+
+[node name="MeteorSmall2" type="Sprite2D" parent="Parallax1/ParallaxLayer"]
+position = Vector2(892.456, 1995.13)
+rotation = -0.478683
+texture = ExtResource("2_560ro")
+
+[node name="StarTiny" type="Sprite2D" parent="Parallax1/ParallaxLayer"]
+position = Vector2(614.016, 1632.17)
+rotation = -0.0445303
+texture = ExtResource("6_ywt8k")
+
+[node name="StarSmall5" type="Sprite2D" parent="Parallax1/ParallaxLayer"]
+position = Vector2(200.816, 1322.26)
+rotation = -0.0445303
+texture = ExtResource("5_uupyb")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Parallax1"]
+modulate = Color(0.239216, 0.239216, 0.239216, 0.392157)
+motion_mirroring = Vector2(1920, 1920)
+
+[node name="StarSmall" type="Sprite2D" parent="Parallax1/ParallaxLayer2"]
+position = Vector2(146, 192)
+texture = ExtResource("5_uupyb")
+
+[node name="StarSmall2" type="Sprite2D" parent="Parallax1/ParallaxLayer2"]
+position = Vector2(988, 430)
+texture = ExtResource("5_uupyb")
+
+[node name="StarSmall3" type="Sprite2D" parent="Parallax1/ParallaxLayer2"]
+position = Vector2(1092, 943)
+texture = ExtResource("5_uupyb")
+
+[node name="StarSmall4" type="Sprite2D" parent="Parallax1/ParallaxLayer2"]
+position = Vector2(1737, 115)
+texture = ExtResource("5_uupyb")
+
+[node name="StarSmall5" type="Sprite2D" parent="Parallax1/ParallaxLayer2"]
+position = Vector2(524, 106)
+texture = ExtResource("5_uupyb")
+
+[node name="StarTiny" type="Sprite2D" parent="Parallax1/ParallaxLayer2"]
+position = Vector2(553.352, 1887.73)
+rotation = 2.39206
+texture = ExtResource("6_ywt8k")
+
+[node name="StarTiny2" type="Sprite2D" parent="Parallax1/ParallaxLayer2"]
+position = Vector2(149.451, 1473.85)
+rotation = 2.39206
+texture = ExtResource("6_ywt8k")
+
+[node name="StarTiny3" type="Sprite2D" parent="Parallax1/ParallaxLayer2"]
+position = Vector2(1093.95, 1140.45)
+rotation = 2.39206
+texture = ExtResource("6_ywt8k")
+
+[node name="StarTiny4" type="Sprite2D" parent="Parallax1/ParallaxLayer2"]
+position = Vector2(1299.2, 1507.87)
+rotation = 2.39206
+texture = ExtResource("6_ywt8k")
+
+[node name="StarTiny5" type="Sprite2D" parent="Parallax1/ParallaxLayer2"]
+position = Vector2(1322.87, 1981.34)
+rotation = 2.39206
+texture = ExtResource("6_ywt8k")
+
+[node name="StarTiny6" type="Sprite2D" parent="Parallax1/ParallaxLayer2"]
+position = Vector2(1800.05, 1525.32)
+rotation = 2.39206
+texture = ExtResource("6_ywt8k")
+
+[node name="MeteorSquareDetailedLarge" type="Sprite2D" parent="Parallax1/ParallaxLayer2"]
+position = Vector2(1806.71, 1666.18)
+rotation = 2.39206
+texture = ExtResource("7_vnups")
+
+[node name="MeteorSquareSmall" type="Sprite2D" parent="Parallax1/ParallaxLayer2"]
+position = Vector2(771.953, 1418.25)
+rotation = 2.39206
+texture = ExtResource("8_ruqf4")

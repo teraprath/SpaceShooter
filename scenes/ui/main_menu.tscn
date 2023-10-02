@@ -1,0 +1,156 @@
+[gd_scene load_steps=3 format=3 uid="uid://b28ug3beqy8gf"]
+
+[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_7p3a5"]
+[ext_resource type="Theme" uid="uid://bnhue6sj65ig5" path="res://tres/main_theme.tres" id="1_7x70k"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_7p3a5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 350.0
+offset_top = 50.0
+offset_right = -350.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_7x70k")
+
+[node name="Menu" type="VBoxContainer" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -327.5
+offset_right = 300.0
+offset_bottom = 327.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="NewGameButton" type="Button" parent="Control/Menu"]
+layout_mode = 2
+text = "New Game"
+
+[node name="LoadGameButton" type="Button" parent="Control/Menu"]
+layout_mode = 2
+text = "Load Game"
+
+[node name="SettingsButton" type="Button" parent="Control/Menu"]
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="Control/Menu"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Settings" type="VBoxContainer" parent="Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -424.0
+offset_top = -497.5
+offset_right = 424.0
+offset_bottom = 497.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Container" type="HBoxContainer" parent="Control/Settings"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Page1" type="VBoxContainer" parent="Control/Settings/Container"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="FullscreenButton" type="Button" parent="Control/Settings/Container/Page1"]
+layout_mode = 2
+text = "Fullscreen: OFF"
+
+[node name="GraphicsButton" type="Button" parent="Control/Settings/Container/Page1"]
+layout_mode = 2
+text = "Graphics: Medium"
+
+[node name="ScreenShakeButton" type="Button" parent="Control/Settings/Container/Page1"]
+layout_mode = 2
+text = "Screen Shake: ON"
+
+[node name="KeymapButton" type="Button" parent="Control/Settings/Container/Page1"]
+layout_mode = 2
+text = "Show Controls: ON"
+
+[node name="InputButton" type="Button" parent="Control/Settings/Container/Page1"]
+layout_mode = 2
+text = "Input: Keyboard"
+
+[node name="Page2" type="VBoxContainer" parent="Control/Settings/Container"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="MusicButton" type="Button" parent="Control/Settings/Container/Page2"]
+layout_mode = 2
+text = "Music: ON"
+
+[node name="SFXButton" type="Button" parent="Control/Settings/Container/Page2"]
+layout_mode = 2
+text = "SFX: ON"
+
+[node name="ZoomButton" type="Button" parent="Control/Settings/Container/Page2"]
+layout_mode = 2
+text = "Zoom Level: 1"
+
+[node name="MSAAButton" type="Button" parent="Control/Settings/Container/Page2"]
+layout_mode = 2
+text = "MSAA: Disabled"
+
+[node name="GamepadModeButton" type="Button" parent="Control/Settings/Container/Page2"]
+visible = false
+layout_mode = 2
+text = "Mode: PlayStation"
+icon_alignment = 2
+expand_icon = true
+
+[node name="CrosshairButton" type="Button" parent="Control/Settings/Container/Page2"]
+visible = false
+layout_mode = 2
+text = "Crosshair:"
+icon_alignment = 2
+expand_icon = true
+
+[node name="BackButton" type="Button" parent="Control/Settings"]
+layout_mode = 2
+text = "Back to Main Menu"
+
+[connection signal="pressed" from="Control/Menu/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="Control/Menu/LoadGameButton" to="." method="_on_load_game_button_pressed"]
+[connection signal="pressed" from="Control/Menu/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Control/Menu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Control/Settings/Container/Page1/FullscreenButton" to="." method="_on_fullscreen_button_pressed"]
+[connection signal="pressed" from="Control/Settings/Container/Page1/GraphicsButton" to="." method="_on_graphics_button_pressed"]
+[connection signal="pressed" from="Control/Settings/Container/Page1/ScreenShakeButton" to="." method="_on_screen_shake_button_pressed"]
+[connection signal="pressed" from="Control/Settings/Container/Page1/KeymapButton" to="." method="_on_keymap_button_pressed"]
+[connection signal="pressed" from="Control/Settings/Container/Page1/InputButton" to="." method="_on_input_button_pressed"]
+[connection signal="pressed" from="Control/Settings/Container/Page2/MusicButton" to="." method="_on_music_button_pressed"]
+[connection signal="pressed" from="Control/Settings/Container/Page2/SFXButton" to="." method="_on_sfx_button_pressed"]
+[connection signal="pressed" from="Control/Settings/Container/Page2/ZoomButton" to="." method="_on_zoom_button_pressed"]
+[connection signal="pressed" from="Control/Settings/Container/Page2/MSAAButton" to="." method="_on_msaa_button_pressed"]
+[connection signal="pressed" from="Control/Settings/Container/Page2/GamepadModeButton" to="." method="_on_gamepad_mode_button_pressed"]
+[connection signal="pressed" from="Control/Settings/Container/Page2/CrosshairButton" to="." method="_on_crosshair_button_pressed"]
+[connection signal="pressed" from="Control/Settings/BackButton" to="." method="_on_back_button_pressed"]

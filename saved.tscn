@@ -1,0 +1,53 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_c7hur"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="2_yjowv"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="3_gw85v"]
+[ext_resource type="PackedScene" path="res://scenes/objects/spawner.tscn" id="4_8v87y"]
+[ext_resource type="Script" path="res://scenes/objects/spawner.gd" id="5_68erh"]
+[ext_resource type="PackedScene" path="res://scenes/ui/player_ui.tscn" id="6_lfbyc"]
+[ext_resource type="Script" path="res://scenes/ui/player_ui.gd" id="7_4lutd"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="8_itovx"]
+[ext_resource type="Script" path="res://scenes/ui/pause_menu.gd" id="9_qlqi4"]
+[ext_resource type="PackedScene" path="res://scenes/ui/death_menu.tscn" id="10_x7s7l"]
+[ext_resource type="Script" path="res://scenes/ui/death_menu.gd" id="11_b2p6u"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_c7hur")
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Bullets" type="Node2D" parent="."]
+process_mode = 3
+
+[node name="Entities" type="Node2D" parent="."]
+process_mode = 3
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"] instance=ExtResource("2_yjowv")]
+process_mode = 3
+visibility_layer = 31
+position = Vector2(1284.62, -935.073)
+rotation = 3.09252
+scale = Vector2(0.999983, 0.999983)
+velocity = Vector2(150.889, 131.273)
+script = ExtResource("3_gw85v")
+
+[node name="Spawner" type="Node2D" parent="Player" instance=ExtResource("4_8v87y")]
+script = ExtResource("5_68erh")
+
+[node name="PlayerUI" type="CanvasLayer" parent="." instance=ExtResource("6_lfbyc")]
+script = ExtResource("7_4lutd")
+
+[node name="PauseMenu" type="CanvasLayer" parent="." instance=ExtResource("8_itovx")]
+visible = false
+script = ExtResource("9_qlqi4")
+
+[node name="DeathMenu" type="CanvasLayer" parent="." instance=ExtResource("10_x7s7l")]
+visible = false
+script = ExtResource("11_b2p6u")
+
+[connection signal="area_entered" from="Bullets/Bullet" to="Bullets/Bullet" method="_on_area_entered" flags=18]
+[connection signal="body_entered" from="Bullets/Bullet" to="Bullets/Bullet" method="_on_body_entered" flags=18]
+[connection signal="area_entered" from="Bullets/@Area2D@8" to="Bullets/@Area2D@8" method="_on_area_entered" flags=18]
+[connection signal="body_entered" from="Bullets/@Area2D@8" to="Bullets/@Area2D@8" method="_on_body_entered" flags=18]
+[connection signal="shoot" from="Player" to="." method="_on_player_shoot" flags=18]

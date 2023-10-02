@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cad4l6js3034b"]
+
+[ext_resource type="PackedScene" uid="uid://du17c4f4nkv8k" path="res://scenes/items/item.tscn" id="1_dypv7"]
+[ext_resource type="Script" path="res://scenes/items/first_aid_kit.gd" id="2_ae1be"]
+[ext_resource type="Texture2D" uid="uid://dtedcdas4flod" path="res://assets/textures/first-aid-kit.svg" id="3_e6c36"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gytdy"]
+radius = 265.68
+
+[node name="FirstAidKit" instance=ExtResource("1_dypv7")]
+modulate = Color(25, 0.48, 0.42, 1)
+script = ExtResource("2_ae1be")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_e6c36")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_gytdy")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7fl12wxdd87g"]
+
+[ext_resource type="Script" path="res://scenes/globals/global_timer.gd" id="1_3sxmr"]
+
+[node name="GlobalTimer" type="Node"]
+script = ExtResource("1_3sxmr")
+
+[node name="AbilityTimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
+[node name="UltimateTimer" type="Timer" parent="."]
+wait_time = 90.0
+one_shot = true
+
+[node name="AbilityActiveTimer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+
+[node name="UltimateActiveTimer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+
+[node name="KillstreakTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="AbilityTimer" to="." method="_on_ability_timer_timeout"]
+[connection signal="timeout" from="UltimateTimer" to="." method="_on_ultimate_timer_timeout"]
+[connection signal="timeout" from="AbilityActiveTimer" to="." method="_on_activity_active_timer_timeout"]
+[connection signal="timeout" from="UltimateActiveTimer" to="." method="_on_ultimate_active_timer_timeout"]
+[connection signal="timeout" from="KillstreakTimer" to="." method="_on_killstreak_timer_timeout"]

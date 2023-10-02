@@ -1,0 +1,339 @@
+[gd_scene load_steps=22 format=3 uid="uid://dl54i8yqr7lvs"]
+
+[ext_resource type="Script" path="res://scenes/ui/player_ui.gd" id="1_5q6qi"]
+[ext_resource type="Theme" uid="uid://bnhue6sj65ig5" path="res://tres/main_theme.tres" id="1_rgnbo"]
+[ext_resource type="Texture2D" uid="uid://wlr24l85fwd1" path="res://assets/textures/rocket-thruster.svg" id="3_38hl7"]
+[ext_resource type="Texture2D" uid="uid://ckatuevqpcoul" path="res://assets/textures/hypersonic-bolt.svg" id="3_x13ce"]
+[ext_resource type="Texture2D" uid="uid://ne7up8trm8rw" path="res://assets/textures/missile-swarm.svg" id="4_ssa7i"]
+[ext_resource type="Texture2D" uid="uid://dh2q4belufxbg" path="res://assets/ui/controls/playstation/Button - PS R2.svg" id="6_aumfq"]
+[ext_resource type="Script" path="res://scenes/ui/Controls.gd" id="6_p3y21"]
+[ext_resource type="Texture2D" uid="uid://bwy67srlgugn2" path="res://assets/ui/controls/xbox/button_xbox_analog_trigger_light_4.svg" id="7_8pc06"]
+[ext_resource type="Texture2D" uid="uid://11skxntr063f" path="res://assets/ui/controls/playstation/Button - PS Triangle 1.svg" id="7_a7ypg"]
+[ext_resource type="Texture2D" uid="uid://c4i7fonn0ec7v" path="res://assets/ui/controls/xbox/button_xbox_analog_trigger_light_2.svg" id="8_5ukp0"]
+[ext_resource type="Texture2D" uid="uid://dqlex0qqvxi6c" path="res://assets/ui/controls/playstation/Button - PS Square 1.svg" id="8_iesfa"]
+[ext_resource type="Texture2D" uid="uid://eirofgglkuq2" path="res://assets/ui/controls/xbox/button_xbox_digital_y_1.svg" id="10_1skn6"]
+[ext_resource type="Texture2D" uid="uid://d1yxyq3abiqeg" path="res://assets/ui/controls/playstation/Button - PS L1 Blank.svg" id="10_lbgd0"]
+[ext_resource type="Texture2D" uid="uid://dw3toulijxbt2" path="res://assets/ui/controls/xbox/button_xbox_digital_x_11.svg" id="12_8pntm"]
+[ext_resource type="Script" path="res://scenes/ui/alert.gd" id="13_uwts0"]
+[ext_resource type="FontFile" uid="uid://cqj6johbryp1b" path="res://assets/fonts/Lexend-SemiBold.ttf" id="14_7ok4r"]
+[ext_resource type="PackedScene" uid="uid://b3ey70ftesyne" path="res://scenes/ui/start.tscn" id="15_05rwo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4go5m"]
+bg_color = Color(0, 0, 0, 0.129412)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0md6g"]
+bg_color = Color(0.74902, 0.298039, 0.247059, 1)
+border_width_bottom = 15
+border_color = Color(0.6, 0.2382, 0.198, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h442a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c67o4"]
+bg_color = Color(1, 0.392157, 0.32549, 1)
+border_width_bottom = 15
+border_color = Color(0.85098, 0.337255, 0.282353, 1)
+
+[node name="PlayerUI" type="CanvasLayer"]
+script = ExtResource("1_5q6qi")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rgnbo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33.5
+offset_right = 33.5
+offset_bottom = 160.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Score" type="Label" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -50.0
+offset_right = 250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_4go5m")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0md6g")
+show_percentage = false
+
+[node name="HealthBarLayer" type="ProgressBar" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -50.0
+offset_right = 250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_styles/background = SubResource("StyleBoxEmpty_h442a")
+theme_override_styles/fill = SubResource("StyleBoxFlat_c67o4")
+show_percentage = false
+
+[node name="ActionContainer" type="VBoxContainer" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -340.0
+offset_top = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = -20
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ActionContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="DashProgress" type="TextureProgressBar" parent="Control/ActionContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 8
+max_value = 1.0
+value = 1.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_over = ExtResource("3_x13ce")
+texture_progress = ExtResource("3_x13ce")
+tint_over = Color(1, 1, 1, 0.196078)
+
+[node name="AbilityProgress" type="TextureProgressBar" parent="Control/ActionContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 8
+fill_mode = 3
+nine_patch_stretch = true
+texture_over = ExtResource("4_ssa7i")
+texture_progress = ExtResource("4_ssa7i")
+tint_over = Color(1, 1, 1, 0.196078)
+
+[node name="UltimateProgress" type="TextureProgressBar" parent="Control/ActionContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 8
+fill_mode = 3
+nine_patch_stretch = true
+texture_over = ExtResource("3_38hl7")
+texture_progress = ExtResource("3_38hl7")
+tint_over = Color(1, 1, 1, 0.196078)
+
+[node name="ShieldContainer" type="HBoxContainer" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 512.0
+offset_bottom = 512.0
+scale = Vector2(0.1, 0.1)
+
+[node name="Controls" type="VBoxContainer" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -244.0
+offset_right = 242.0
+grow_vertical = 0
+script = ExtResource("6_p3y21")
+
+[node name="Shoot" type="HBoxContainer" parent="Control/Controls"]
+layout_mode = 2
+
+[node name="keyboard" type="TextureRect" parent="Control/Controls/Shoot"]
+visible = false
+layout_mode = 2
+texture = ExtResource("7_8pc06")
+
+[node name="Label" type="Label" parent="Control/Controls/Shoot/keyboard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("14_7ok4r")
+theme_override_font_sizes/font_size = 24
+text = "
+ L"
+horizontal_alignment = 1
+
+[node name="playstation" type="TextureRect" parent="Control/Controls/Shoot"]
+visible = false
+layout_mode = 2
+texture = ExtResource("6_aumfq")
+
+[node name="xbox" type="TextureRect" parent="Control/Controls/Shoot"]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_5ukp0")
+
+[node name="Label" type="Label" parent="Control/Controls/Shoot"]
+layout_mode = 2
+text = "Shoot"
+
+[node name="Pause" type="HBoxContainer" parent="Control/Controls"]
+layout_mode = 2
+
+[node name="keyboard" type="TextureRect" parent="Control/Controls/Pause"]
+visible = false
+layout_mode = 2
+texture = ExtResource("10_lbgd0")
+
+[node name="Label" type="Label" parent="Control/Controls/Pause/keyboard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("14_7ok4r")
+theme_override_font_sizes/font_size = 24
+text = "esc"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="playstation" type="TextureRect" parent="Control/Controls/Pause"]
+visible = false
+layout_mode = 2
+texture = ExtResource("7_a7ypg")
+
+[node name="xbox" type="TextureRect" parent="Control/Controls/Pause"]
+visible = false
+layout_mode = 2
+texture = ExtResource("10_1skn6")
+
+[node name="Label" type="Label" parent="Control/Controls/Pause"]
+layout_mode = 2
+text = "Pause"
+
+[node name="Fullscreen" type="HBoxContainer" parent="Control/Controls"]
+layout_mode = 2
+
+[node name="keyboard" type="TextureRect" parent="Control/Controls/Fullscreen"]
+visible = false
+layout_mode = 2
+texture = ExtResource("10_lbgd0")
+
+[node name="Label" type="Label" parent="Control/Controls/Fullscreen/keyboard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("14_7ok4r")
+theme_override_font_sizes/font_size = 24
+text = "F11"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="playstation" type="TextureRect" parent="Control/Controls/Fullscreen"]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_iesfa")
+
+[node name="xbox" type="TextureRect" parent="Control/Controls/Fullscreen"]
+visible = false
+layout_mode = 2
+texture = ExtResource("12_8pntm")
+
+[node name="Label" type="Label" parent="Control/Controls/Fullscreen"]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="Alert" type="VBoxContainer" parent="Control"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.5
+offset_top = -313.0
+offset_right = 94.5
+offset_bottom = 313.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 500
+alignment = 2
+script = ExtResource("13_uwts0")
+
+[node name="Title" type="Label" parent="Control/Alert"]
+modulate = Color(1, 1, 0.666667, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_7ok4r")
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="TitleTimer" type="Timer" parent="Control/Alert"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Subtitle" type="Label" parent="Control/Alert"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_7ok4r")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="SubtitleTimer" type="Timer" parent="Control/Alert"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Start" parent="." instance=ExtResource("15_05rwo")]
+
+[connection signal="timeout" from="Control/Alert/TitleTimer" to="Control/Alert" method="_on_title_timer_timeout"]
+[connection signal="timeout" from="Control/Alert/SubtitleTimer" to="Control/Alert" method="_on_subtitle_timer_timeout"]

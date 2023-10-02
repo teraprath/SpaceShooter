@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnnh2wadaa4d2"]
+
+[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_3o0yl"]
+[ext_resource type="PackedScene" uid="uid://dpnni1weiu4pa" path="res://scenes/player/player.tscn" id="1_e7crw"]
+[ext_resource type="PackedScene" uid="uid://dxv0s136j78wr" path="res://scenes/enemies/drone_01.tscn" id="2_h86pp"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_3o0yl")
+
+[node name="Bullets" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_e7crw")]
+position = Vector2(350, 263)
+
+[node name="Drone01" parent="." instance=ExtResource("2_h86pp")]
+position = Vector2(248, 495)
+
+[connection signal="shoot" from="Player" to="." method="_on_player_shoot"]

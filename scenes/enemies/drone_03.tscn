@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://31gskxsb0w5k"]
+
+[ext_resource type="PackedScene" uid="uid://byqd6hixcjg88" path="res://scenes/enemies/enemy.tscn" id="1_exwtf"]
+[ext_resource type="Texture2D" uid="uid://cdtmajxjia7p7" path="res://assets/textures/enemy_C.png" id="2_osxp6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6psm4"]
+radius = 227.002
+
+[node name="Drone03" instance=ExtResource("1_exwtf")]
+speed = 75
+health = 50
+min_player_distance = 1000
+max_player_distance = 600
+min_score = 30
+max_score = 40
+bullet_speed = 400
+enemy_damage = 30
+explosion_damage = 40
+
+[node name="Sprite2D" parent="." index="0"]
+rotation = 1.5708
+texture = ExtResource("2_osxp6")
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+rotation = 1.5708
+polygon = PackedVector2Array(10, -4, 0, -32, -9, -5, -16, -6, -26, -22, -43, -24, -57, -16, -62, -11, -63, 7, -59, 16, -46, 23, -33, 23, -19, 14, -16, 4, -12, 4, -17, 16, -1, 32, 15, 17, 11, 5, 16, 4, 20, 15, 30, 23, 47, 24, 63, 13, 65, -9, 48, -24, 31, -23, 20, -13, 16, -5)
+
+[node name="CollisionShape2D" parent="SpaceArea" index="0"]
+shape = SubResource("CircleShape2D_6psm4")
+
+[node name="SmokeParticles" parent="Particles" index="0"]
+scale = Vector2(1.2, 1.2)
+amount = 275
+lifetime = 2.0
+explosiveness = 0.4
+randomness = 0.2
