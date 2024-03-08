@@ -1,3 +1,3 @@
 # SpaceShooter
- 
-Simple Space Shooter Game using Godot 3
+Available for Linux
+[Download](https://github.com/teraprath/SpaceShooter/releases/tag/1.0)
