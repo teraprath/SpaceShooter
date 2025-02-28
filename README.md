@@ -1,4 +1,3 @@
 # SpaceShooter
-Available for Linux
-<br>
-[Download](https://github.com/teraprath/SpaceShooter/releases)
+Download: https://teraprath.itch.io/space-shooter-pow-pow
+More Games: https://teraprath.itch.io
